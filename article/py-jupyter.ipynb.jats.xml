@@ -32,10 +32,20 @@
     <sec id="code-cells-1">
       <title>Code cells</title>
       <p>Code cells in notebooks are imported without loss. Stencila&#x2019;s user interface currently differs from Jupyter in that code cells are executed on update while you are typing. This produces a very reactive user experience but is inappropriate for more compute intensive, longer running code cells. We are currently working on improving this to allowing users to decide to execute cells explicitly (e.g.&#xA0;using <monospace>Ctrl+Enter</monospace>).</p>
+      
+      <code specific-use="cell"><named-content><alternatives>
+          <code specific-use="source" language="py">import sys
+import time
+'Hello this is Python %s.%s and it is %s' % (sys.version_info[0], sys.version_info[1], time.strftime('%c'))</code>
+      <code specific-use="output" language="json">{}</code>
+      </alternatives>
+      </named-content>
+      </code>
+
       <code specific-use="cell"><named-content><alternatives>
           <code specific-use="source" language="pyjp" executable="yes">import sys
 import time
-&apos;Hello this is Python %s.%s and it is %s&apos; % (sys.version_info[0], sys.version_info[1], time.strftime(&apos;%c&apos;))</code>
+&apos;Hello this is Python via Jupyter %s.%s and it is %s&apos; % (sys.version_info[0], sys.version_info[1], time.strftime(&apos;%c&apos;))</code>
       <code specific-use="output" language="json">{}</code>
       </alternatives>
       </named-content>
